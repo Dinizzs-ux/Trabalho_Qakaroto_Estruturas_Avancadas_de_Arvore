@@ -32,7 +32,7 @@ Desvantagens: gerenciamento de ponteiros complicado; desperdício de memória em
 Aplicações Práticas (Geral): N-ária: estruturas de armazenamento (como NTFS, ext4), bancos de dados relacionais e não-relacionais, e árvores de decisão na inteligência artificial.
 <img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/d046c78f-dddf-4ba8-b4b8-ef23d4b50ded" />
 
-Rotação Simples à Direita
+Parte 3 - Rotação Simples à Direita
 
 Finalidade: Diminuir a altura da subárvore esquerda e elevar a da subárvore direita a fim de restaurar um desbalanceamento para a esquerda. Quando é aplicado: Quando um nó se torna desbalanceado com sinal positivo (FB = +2) e seu filho esquerdo também indica desbalanceamento para a esquerda (FB >= 0). Trata-se do caso intitulado "Esquerda-Esquerda". 
 
