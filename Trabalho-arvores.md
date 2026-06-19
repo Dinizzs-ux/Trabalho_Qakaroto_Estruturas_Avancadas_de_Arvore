@@ -31,3 +31,44 @@ Vantagens: melhor representação de hierarquias complexas do mundo real; diminu
 Desvantagens: gerenciamento de ponteiros complicado; desperdício de memória em nós que não usam a capacidade total de N filhos, a menos que seja implementado de maneira dinâmica; não é tão simples quanto uma árvore binária.
 Aplicações Práticas (Geral): N-ária: estruturas de armazenamento (como NTFS, ext4), bancos de dados relacionais e não-relacionais, e árvores de decisão na inteligência artificial.
 <img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/d046c78f-dddf-4ba8-b4b8-ef23d4b50ded" />
+
+Rotação Simples à Direita
+
+Finalidade: Diminuir a altura da subárvore esquerda e elevar a da subárvore direita a fim de restaurar um desbalanceamento para a esquerda. Quando é aplicado: Quando um nó se torna desbalanceado com sinal positivo (FB = +2) e seu filho esquerdo também indica desbalanceamento para a esquerda (FB >= 0). Trata-se do caso intitulado "Esquerda-Esquerda". 
+
+<img width="357" height="92" alt="image" src="https://github.com/user-attachments/assets/2969cd9b-5893-4a52-907e-ecc606c95699" />
+
+Rotação Simples para a Esquerda
+
+Objetivo: Baixar a altura da subárvore direita e elevar a da subárvore esquerda para restaurar um desbalanceamento à direita. Situação em que é aplicada: Quando um nó se torna desbalanceado com sinal negativo (FB = -2) e seu filho à direita também tende para a direita (FB <= 0). Trata-se do caso "Direita-Direita".
+
+<img width="399" height="95" alt="image" src="https://github.com/user-attachments/assets/04d615d0-f175-4b78-859b-dce0f3ac21cf" />
+
+Rotação Dupla
+
+Usada quando o desbalanceamento é em "joelho" ou zigue-zague (sinais opostos entre pai e filho).
+
+Esquerda-Direita (LR): 
+
+Situação: O nó pai tem FB = +2 e seu filho esquerdo tem FB = -1 (Caso Left-Right).
+ 
+Mecanismo: Começa-se realizando uma Rotação Simples à Esquerda no filho esquerdo, assim o problema se torna um caso "Esquerda-Esquerda". Então, realiza-se uma Rotação Simples à Direita no pai desbalanceado. 
+
+Direita-Esquerda (RE): 
+
+Contexto: O nó pai apresenta um FB de -2, enquanto seu filho à direita tem um FB de +1 (Exemplo de Direita-Esquerda).
+
+Mecanismo: Em primeiro lugar, efetua-se uma Rotação Simples à Direita no filho direito, convertendo o problema em um caso "Direita-Direita". Em seguida, realiza-se uma Rotação Simples à Esquerda no nó pai que está desbalanceado.
+
+<img width="443" height="94" alt="image" src="https://github.com/user-attachments/assets/bf7a1f22-e3fa-4127-b3a4-3b3ade6077ca" />
+
+Inversão (Espelhamento)
+
+Conceito: Consiste em uma operação realizada em uma árvore na qual os filhos esquerdo e direito de cada nó são trocados de posição de forma recursiva. Como resultado, a estrutura final da árvore se torna uma imagem espelhada da original.
+
+Aplicação: Essa técnica é utilizada em áreas como computação gráfica, especialmente em processos de espelhamento visual e transformação de coordenadas. Além disso, é um exercício bastante comum no estudo de estruturas de dados, pois ajuda a desenvolver o raciocínio lógico e a compreensão de algoritmos recursivos aplicados a árvores.
+
+<img width="311" height="95" alt="image" src="https://github.com/user-attachments/assets/41038409-346d-41a5-b612-13711c0456b0" />
+
+
+
