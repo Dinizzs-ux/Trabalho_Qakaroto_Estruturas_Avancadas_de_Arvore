@@ -79,3 +79,16 @@ Operações Realizadas pelo sistema:
 Busca por colisão por proximidade: ao disparar um projétil, a engine percorre rapidamente a árvore N-ária para determinar em qual quadrante folha ele se encontra.
 Filtragem Eficiente: O teste de colisão real (física pesada) é realizado apenas entre os objetos que estão no mesmo nó folha específico. Projéteis podem ser disparados simultaneamente sem travamentos, pois inimigos localizados em regiões distantes do mapa são imediatamente excluídos do cálculo.
 
+<img width="791" height="617" alt="image" src="https://github.com/user-attachments/assets/117081a7-b25b-4705-add5-a9823ee6ce1e" />
+
+Apesar de ambas assegurarem buscas em tempo logarítmico, a AVL é rigidamente balanceada, tornando-a um pouco mais rápida para operações de leitura (busca). No entanto, isso vem com um custo elevado em inserções devido às rotações constantes. A Rubro-Negra permite um balanceamento mais flexível (aproximado) por meio de regras de coloração, o que reduz a necessidade de rotações e a torna a opção ideal para sistemas com inserções e remoções de dados frequentes.
+
+A Árvore N-ária se distancia da restrição de 2 filhos por nó. Ao permitir vários ponteiros internos, a árvore tem uma altura total significativamente menor. Isso a estabelece como a estrutura padrão para indexar grandes quantidades de dados que necessitam de armazenamento em disco (como bancos de dados e sistemas de arquivos), reduzindo ao mínimo o custo de leitura física em mídias secundárias.
+
+Referências: 
+CORMEN, Thomas H. et al. Algoritmos: Teoria e Prática. 3ª ed. Rio de Janeiro: Elsevier, 2012.
+SZWARCFITER, Jayme Luiz; MARKENZON, Lilian. Estruturas de Dados e seus Algoritmos. 3ª ed. Rio de Janeiro: LTC, 2010.
+imagens: 
+https://upload.wikimedia.org/wikipedia/commons/2/2c/AVL_Rotação_Dupla_à_Esquerda.PNG
+https://image.slidesharecdn.com/rubronegraequipe3-170223090249/75/Arvores-Rubro-Negras-3-2048.jpg
+https://upload.wikimedia.org/wikipedia/commons/0/02/Nary_to_binary_tree_conversion.png 
