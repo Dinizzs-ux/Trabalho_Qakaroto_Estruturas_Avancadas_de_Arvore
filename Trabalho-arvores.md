@@ -70,5 +70,12 @@ Aplicação: Essa técnica é utilizada em áreas como computação gráfica, es
 
 <img width="311" height="95" alt="image" src="https://github.com/user-attachments/assets/41038409-346d-41a5-b612-13711c0456b0" />
 
-
+Parte 3 – Aplicação Prática
+Escolha: Criação de Jogos (Engine de Física e Detecção de Colisão)
+Estrutura mais apropriada: árvore N-ária (particularmente a variação Quadtree, em que cada nó tem exatamente N=4 filhos).
+Desempenho de Processamento (Física em Tempo Real): em jogos com muitos elementos na tela, como jogos de tiro, estratégia ou nave, a engine não precisa testar a colisão de cada objeto contra todos os outros a cada frame. Isso resultaria em milhares de verificações desnecessárias. Isso resulta em quedas significativas na taxa de quadros por segundo (FPS). A Quadtree diminui significativamente o custo computacional de um cenário caótico para uma busca organizada com complexidade O(log n).
+Organização dos Dados por Quadrantes: a árvore organiza o espaço bidimensional (a tela do jogo) de maneira hierárquica. O nó raiz é o ponto de partida de todo o mapa. Sempre que há um acúmulo de objetos em uma única área, esse nó se divide em quatro nós filhos, que representam os quadrantes: Noroeste (NW), Nordeste (NE), Sudoeste (SW) e Sudeste (SE). Os objetos reais, como jogadores, inimigos e tiros, são armazenados apenas nos nós folhas que correspondem à sua localização precisa no mapa.
+Operações Realizadas pelo sistema:
+Busca por colisão por proximidade: ao disparar um projétil, a engine percorre rapidamente a árvore N-ária para determinar em qual quadrante folha ele se encontra.
+Filtragem Eficiente: O teste de colisão real (física pesada) é realizado apenas entre os objetos que estão no mesmo nó folha específico. Projéteis podem ser disparados simultaneamente sem travamentos, pois inimigos localizados em regiões distantes do mapa são imediatamente excluídos do cálculo.
 
